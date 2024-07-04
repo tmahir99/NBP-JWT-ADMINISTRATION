@@ -16,7 +16,7 @@ export interface Document {
   providedIn: 'root'
 })
 export class DocumentService {
-  private apiUrl = 'https://localhost:7082/api/Document';
+  private apiUrl = 'https://naprednebaze.azurewebsites.net//api/Document';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 

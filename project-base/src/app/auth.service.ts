@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  private apiUrl = 'https://localhost:7082/api/Auth';
+  private apiUrl = 'https://naprednebaze.azurewebsites.net//api/Auth';
 
   constructor(private http: HttpClient, private router: Router) { }
 

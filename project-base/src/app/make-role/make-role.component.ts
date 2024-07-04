@@ -41,7 +41,7 @@ export class MakeRoleComponent implements OnInit {
         'Authorization': `Bearer ${token}`, // Set bearer token in request headers
       });
 
-      this.http.get<any[]>('https://localhost:7082/api/Auth/GetAllUsers', { headers })
+      this.http.get<any[]>('https://naprednebaze.azurewebsites.net//api/Auth/GetAllUsers', { headers })
         .subscribe(
           (response) => {
             console.log(response);
@@ -68,7 +68,7 @@ export class MakeRoleComponent implements OnInit {
 
       const body = { userName: userName };
 
-      this.http.post(`https://localhost:7082/api/Auth/${role}`, body, { headers })
+      this.http.post(`https://naprednebaze.azurewebsites.net//api/Auth/${role}`, body, { headers })
         .subscribe(
           (response: any) => {
             this.responseMessage = response.message;
@@ -95,7 +95,7 @@ export class MakeRoleComponent implements OnInit {
 
       const body = { userName: userName };
 
-      this.http.post(`https://localhost:7082/api/Auth/${role}`, body, { headers })
+      this.http.post(`https://naprednebaze.azurewebsites.net//api/Auth/${role}`, body, { headers })
         .subscribe(
           (response: any) => {
             this.responseMessage = response.message;

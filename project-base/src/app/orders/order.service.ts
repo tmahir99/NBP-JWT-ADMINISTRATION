@@ -16,7 +16,7 @@ interface Order {
   providedIn: 'root',
 })
 export class OrderService {
-  private apiUrl = 'https://localhost:7082/api/Procurement/orders';
+  private apiUrl = 'https://naprednebaze.azurewebsites.net//api/Procurement/orders';
 
   constructor(private http: HttpClient, private authService: AuthService) {}
 

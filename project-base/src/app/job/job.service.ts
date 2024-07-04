@@ -7,7 +7,7 @@ import { AuthService } from '../auth.service';
   providedIn: 'root'
 })
 export class JobService {
-  private apiUrl = 'https://localhost:7082/api/Job';
+  private apiUrl = 'https://naprednebaze.azurewebsites.net//api/Job';
 
   constructor(private http: HttpClient, private authService: AuthService) { }
 
