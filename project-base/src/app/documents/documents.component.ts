@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Document, DocumentService } from './document.service'
 import { AuthService } from '../auth.service';
+import { PermissionService } from '../permission.service';
 
 @Component({
   selector: 'app-documents',
@@ -15,7 +16,7 @@ export class DocumentsComponent implements OnInit {
 
   displayDocumentCreation = false;
 
-  constructor(private documentService: DocumentService, public auth: AuthService) { }
+  constructor(private documentService: DocumentService, public auth: AuthService, private prermisionService: PermissionService) { }
 
   ngOnInit() {
     this.loadDocuments();
@@ -62,4 +63,8 @@ export class DocumentsComponent implements OnInit {
   onRowSelect(event: any) {
     this.showEditDialog(event.data);
   }
+
+  canCreateDocuments(): boolean{
+    return this.prermisionService.isAdmin() || this.prermisionService.isSuperAdmin()
+   }
 }

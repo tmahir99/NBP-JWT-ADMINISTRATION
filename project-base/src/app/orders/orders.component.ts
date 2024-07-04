@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from './order.service';
 import { AuthService } from '../auth.service';
+import { PermissionService } from '../permission.service';
 
 interface Order {
   id: number;
@@ -23,7 +24,7 @@ export class OrdersComponent implements OnInit {
   isEditMode: boolean = false;
   totalValue: any;
 
-  constructor(private orderService: OrderService, public authService: AuthService) {}
+  constructor(private orderService: OrderService, public authService: AuthService, public prermisionService: PermissionService) {}
 
   ngOnInit() {
     this.fetchOrders();
@@ -67,4 +68,8 @@ export class OrdersComponent implements OnInit {
       this.totalValue = data;
     });
   }
+
+  canCreateOrders(): boolean{
+    return this.prermisionService.isAdmin() || this.prermisionService.isSuperAdmin() || this.prermisionService.isOwner() || this.prermisionService.isProcurement() || this.prermisionService.isEngineer() || this.prermisionService.isProductionWorker();
+   }
 }

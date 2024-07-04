@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 import { JobService } from './job.service';
 import { AuthService } from '../auth.service';
+import { PermissionService } from '../permission.service';
 
 @Component({
   selector: 'app-job',
@@ -34,7 +35,8 @@ export class JobComponent implements OnInit {
   constructor(
     private jobService: JobService,
     private authService: AuthService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    public prermisionService: PermissionService,
   ) { }
 
   ngOnInit(): void {
@@ -146,4 +148,7 @@ export class JobComponent implements OnInit {
 
     this.snackBar.open(message, action, config);
   }
+
+  canCreateJobJobs(): boolean { return this.prermisionService.isAdmin() || this.prermisionService.isSuperAdmin() || this.prermisionService.isOwner()
+   }
 }

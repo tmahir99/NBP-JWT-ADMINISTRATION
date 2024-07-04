@@ -1,5 +1,7 @@
 import { Component,OnInit, OnDestroy } from '@angular/core';
 import { AuthService } from '../auth.service';
+import { PermissionService } from '../permission.service';
+
 import { NavigationEnd, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 
@@ -14,8 +16,24 @@ export class HeaderComponent implements OnInit, OnDestroy {
   public currentUser: string | null = '';
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private prermisionService: PermissionService,
   ) {}
+  canViewJobs(): boolean { return this.prermisionService.isAdmin() || this.prermisionService.isSuperAdmin() || this.prermisionService.isProductionWorker()
+    || this.prermisionService.isCarrier() || this.prermisionService.isOwner()
+   }
+
+   canViewManageUsers(): boolean {
+    return this.prermisionService.isAdmin() || this.prermisionService.isSuperAdmin() || this.prermisionService.isOwner();
+   }
+
+   canViewOrders(): boolean{
+    return this.prermisionService.isAdmin() || this.prermisionService.isSuperAdmin() || this.prermisionService.isOwner() || this.prermisionService.isProcurement() || this.prermisionService.isEngineer() || this.prermisionService.isProductionWorker();
+   }
+
+   canViewDocuments(): boolean{
+    return this.prermisionService.isAdmin() || this.prermisionService.isSuperAdmin() || this.prermisionService.isOwner()
+   }
   ngOnInit(): void {
     this.currentUser = this.authService.getUserName();
     this.routeSubscription = this.router.events.subscribe(event => {

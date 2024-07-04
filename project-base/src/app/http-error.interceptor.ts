@@ -61,8 +61,8 @@ export class HttpErrorInterceptor implements HttpInterceptor {
   private showSnackBar(message: string, action: string) {
     const config = new MatSnackBarConfig();
     config.duration = 5000; // 5 seconds
-    config.horizontalPosition = 'center';
-    config.verticalPosition = 'top';
+    config.horizontalPosition = 'right';
+    config.verticalPosition = 'bottom';
     config.panelClass = ['error-snackbar']; // Custom CSS class for styling
 
     this.snackBar.open(message, action, config);

@@ -1,7 +1,7 @@
 <div class="container mx-auto p-4">
   <h2 class="text-2xl font-bold mb-4">Orders</h2>
 
-  <div class="mb-6 px-4 pt-4 border rounded-lg shadow-lg bg-white">
+  <div *ngIf="canCreateOrders()" class="mb-6 px-4 pt-4 border rounded-lg shadow-lg bg-white">
     <h3 (click)="displayOrderCreation = !displayOrderCreation" class="text-xl font-semibold cursor-pointer">Create New Order</h3>
     <div *ngIf="displayOrderCreation" class="my-4">
 

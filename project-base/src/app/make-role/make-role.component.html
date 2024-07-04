@@ -1,8 +1,8 @@
-<div *ngIf="canViewTable && users.length > 0" class="p-4">
+<div *ngIf="canViewTable && users.length > 0" class="p-4 max-w-[1200px] flex justify-center flex-col items-center m-auto">
   <h2 class="text-2xl font-bold mb-4">Users</h2>
-  <div class="overflow-x-auto">
-    <table class="min-w-full bg-white border border-gray-200">
-      <thead class="bg-gray-200">
+  <div class="overflow-x-auto rounded-lg">
+    <table class="min-w-full bg-white border border-gray-200 rounded">
+      <thead class="bg-gray-200 rounded">
         <tr>
           <th class="py-2 px-4 border-b">Username</th>
           <th class="py-2 px-4 border-b">First Name</th>
@@ -19,7 +19,7 @@
           <td class="py-2 px-4 border-b">{{ user.firstName }}</td>
           <td class="py-2 px-4 border-b">{{ user.lastName }}</td>
           <td class="py-2 px-4 border-b">{{ user.email }}</td>
-          <td class="py-2 px-4 border-b">{{ user.roles.join(', ') }}</td>
+          <td class="py-2 px-4 border-b">{{ user.roles.join(', ') || "User has no roles" }}</td>
           <td class="py-2 px-4 border-b">
             <div class="grid gap-2 grid-cols-2">
               <button class="bg-blue-500 text-white py-1 px-2 rounded" (click)="makeRole(user.userName, 'make-admin')">Make Admin</button>
