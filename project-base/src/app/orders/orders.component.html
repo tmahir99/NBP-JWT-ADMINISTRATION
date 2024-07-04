@@ -18,7 +18,7 @@
       <input type="datetime-local" placeholder="Order Date" [(ngModel)]="newOrder.orderDate" class="mb-2 p-2 border rounded w-full">
 
       <label for="orderedBy" class="block text-sm font-medium text-gray-700">Ordered By</label>
-      <input type="text" disabled placeholder="{{this.authService.getUserUsername()}}" [(ngModel)]="newOrder.orderedBy" class="mb-2 p-2 border rounded w-full">
+      <input type="text" disabled value="{{this.authService.getUserUsername()}}" placeholder="{{this.authService.getUserUsername()}}" [(ngModel)]="newOrder.orderedBy" class="mb-2 p-2 border rounded w-full">
 
       <button (click)="addOrder()" class="bg-blue-500 text-white p-2 rounded w-full">
         {{ isEditMode ? 'Update Order' : 'Add Order' }}

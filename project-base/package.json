@@ -36,6 +36,7 @@
     "@taiga-ui/styles": "^3.81.0",
     "@tinkoff/ng-dompurify": "4.0.0",
     "dompurify": "3.0.6",
+    "heroku": "^8.11.5",
     "jwt-decode": "^4.0.0",
     "primeicons": "^7.0.0",
     "primeng": "^16.9.1",
