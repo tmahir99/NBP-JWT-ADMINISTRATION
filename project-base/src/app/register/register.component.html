@@ -1,0 +1,20 @@
+<div class="w-full h-screen text-lg flex flex-row">
+  <div class="w-1/2 h-full bg-secondary flex items-center justify-center">
+    <p>logo goes here</p>
+  </div>
+  <div class="w-1/2 h-full bg-accent flex items-center justify-center">
+    <form (ngSubmit)="onSubmit()" class="flex flex-col w-1/2 gap-5 text-center">
+      <label for="firstName"></label>
+      <tui-input type="text" id="firstName" name="firstName" [(ngModel)]="user.firstName" required>
+        First Name
+      </tui-input>
+      <tui-input type="text" id="lastName" name="lastName" [(ngModel)]="user.lastName" required>
+        Last Name</tui-input>
+      <tui-input type="text" id="userName" name="userName" [(ngModel)]="user.userName" required>Username</tui-input>
+      <tui-input type="email" id="email" name="email" [(ngModel)]="user.email" required>Email</tui-input>
+      <tui-input type="password" id="password" name="password" [(ngModel)]="user.password" required>Password</tui-input>
+      <button class="bg-primary text-white py-2 px-4 rounded" type="submit">Register</button>
+      <a href="/login" class="text-text">Already have an account?</a>
+    </form>
+  </div>
+</div>

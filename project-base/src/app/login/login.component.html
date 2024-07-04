@@ -1,0 +1,24 @@
+<div class="w-full h-screen text-lg flex flex-row">
+
+  <div class="w-1/2 h-full bg-secondary flex items-center justify-center">
+    <p>logo goes here</p>
+  </div>
+
+  <div class="w-1/2 h-full bg-accent flex items-center justify-center">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="flex flex-col w-1/2 gap-5 text-center">
+      <tui-input formControlName="username" placeholder="Enter your username" required class="text-center">
+        Enter you username
+        <input tuiTextfield placeholder="someone_example_22" class="text-center" />
+      </tui-input>
+
+      <tui-input formControlName="password" placeholder="Enter your password" type="password" required>
+        Password goes here
+        <input tuiTextfield type="password" placeholder="Password" />
+      </tui-input>
+
+      <button type="submit" class="bg-primary text-white py-2 px-4 rounded">Login</button>
+      <a href="/register" class="text-text">New here?</a>
+    </form>
+  </div>
+
+</div>

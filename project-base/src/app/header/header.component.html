@@ -1,0 +1,11 @@
+<nav *ngIf="!hide" class="navbar bg-orange-200 p-4 flex justify-around items-center">
+  <div class="flex space-x-4">
+    <a routerLink="/home" class="text-white">Home</a>
+    <a routerLink="/documents" class="text-white">Documents</a>
+    <a routerLink="/orders" class="text-white">Orders</a>
+    <a routerLink="/jobs" class="text-white">Jobs</a>
+    <a routerLink="/manage-users" class="text-white">Manage Users</a>
+    <a routerLink="/contact" class="text-white">Contact</a>
+  </div>
+  <button (click)="logoutUser()" class="bg-red-500 text-white px-4 py-2 rounded">Logout {{currentUser}}</button>
+</nav>

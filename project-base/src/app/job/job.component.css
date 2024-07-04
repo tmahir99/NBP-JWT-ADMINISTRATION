@@ -1,0 +1,6 @@
+.custom-snackbar {
+    background-color: #323232;
+    color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+  }
